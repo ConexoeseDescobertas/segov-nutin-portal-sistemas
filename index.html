@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portal de Sistemas — NUTIN / SEGOV-AC</title>
-  <meta name="description" content="Portal institucional de sistemas e utilitários web do Núcleo de Tecnologia da Informação (NUTIN) — Secretaria de Estado de Governo do Acre (SEGOV)." />
+  <title>Acesso ao Formulário — SEGOV / NUTIN</title>
   <style>
     :root {
       --verde-gov: #006b3f;
@@ -33,328 +32,118 @@
       min-height: 100vh;
     }
 
-    /* Faixa superior institucional */
-    .top-bar {
+    header {
       background: linear-gradient(90deg, var(--verde-escuro) 0%, var(--verde-gov) 65%, var(--azul-gov) 100%);
       color: var(--branco);
       border-bottom: 4px solid var(--amarelo-ac);
       padding: 1.5rem 1rem;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     }
 
     .container {
-      max-width: 1120px;
+      max-width: 780px;
       margin: 0 auto;
       padding: 0 1rem;
+      width: 100%;
     }
 
-    .header-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .org-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.16);
-      padding: 0.25rem 0.65rem;
-      border-radius: 4px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
-
-    .header-titles h1 {
-      font-size: 1.55rem;
+    header h1 {
+      font-size: 1.4rem;
       font-weight: 700;
-      line-height: 1.25;
     }
 
-    .header-titles p {
-      font-size: 0.92rem;
+    header p {
+      font-size: 0.9rem;
       opacity: 0.92;
       margin-top: 0.25rem;
     }
 
-    .search-box {
-      width: 100%;
-      max-width: 320px;
-    }
-
-    .search-box input {
-      width: 100%;
-      padding: 0.65rem 0.9rem;
-      border: none;
-      border-radius: 6px;
-      font-size: 0.92rem;
-      outline: none;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    }
-
-    /* Área principal */
     main {
       flex: 1;
-      padding: 2rem 0 3rem;
-    }
-
-    .section-header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.25rem;
-      border-bottom: 1px solid var(--borda);
-      padding-bottom: 0.6rem;
+      padding: 2rem 0;
     }
 
-    .section-header h2 {
-      font-size: 1.15rem;
-      color: var(--verde-escuro);
-      font-weight: 700;
-    }
-
-    .status-pill {
-      font-size: 0.8rem;
-      background: #dcfce7;
-      color: #166534;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      font-weight: 600;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .card {
+    .box-formulario {
       background: var(--branco);
       border: 1px solid var(--borda);
       border-top: 4px solid var(--verde-gov);
       border-radius: 8px;
-      padding: 1.35rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
     }
 
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    .box-formulario h2 {
+      font-size: 1.25rem;
+      color: var(--verde-escuro);
+      margin-bottom: 0.6rem;
     }
 
-    .card.azul {
-      border-top-color: var(--azul-gov);
-    }
-
-    .card-tag {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--azul-gov);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.45rem;
-    }
-
-    .card h3 {
-      font-size: 1.12rem;
-      color: var(--texto);
-      margin-bottom: 0.5rem;
-    }
-
-    .card p {
-      font-size: 0.88rem;
+    .box-formulario p {
       color: var(--texto-suave);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
       line-height: 1.5;
-      margin-bottom: 1.25rem;
     }
 
-    .card-actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: auto;
-    }
-
-    .btn {
+    .btn-acessar {
       display: inline-block;
       background-color: var(--verde-gov);
       color: var(--branco);
       text-decoration: none;
-      font-size: 0.86rem;
       font-weight: 600;
-      padding: 0.55rem 1rem;
+      font-size: 1rem;
+      padding: 0.8rem 1.8rem;
       border-radius: 6px;
       transition: background-color 0.15s ease;
     }
 
-    .btn:hover {
+    .btn-acessar:hover {
       background-color: var(--verde-escuro);
     }
 
-    .card.azul .btn {
-      background-color: var(--azul-gov);
-    }
-
-    .card.azul .btn:hover {
-      background-color: #003566;
-    }
-
-    .version {
-      font-size: 0.76rem;
-      color: #64748b;
-    }
-
-    /* Rodapé institucional */
     footer {
       background-color: #1e293b;
       color: #e2e8f0;
-      padding: 1.5rem 1rem;
+      padding: 1.25rem 1rem;
       font-size: 0.84rem;
       border-top: 3px solid var(--verde-gov);
     }
 
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 1rem;
-      line-height: 1.55;
-    }
-
-    .footer-grid strong {
+    footer strong {
       color: var(--branco);
-    }
-
-    .footer-right {
-      text-align: right;
-    }
-
-    @media (max-width: 640px) {
-      .footer-right {
-        text-align: left;
-      }
-      .search-box {
-        max-width: 100%;
-      }
     }
   </style>
 </head>
 <body>
 
-  <header class="top-bar">
-    <div class="container header-content">
-      <div class="header-titles">
-        <span class="org-badge">Governo do Estado do Acre • SEGOV</span>
-        <h1>Portal de Sistemas — NUTIN</h1>
-        <p>Núcleo de Tecnologia da Informação • Ferramentas e Utilitários Administrativos</p>
-      </div>
-      <div class="search-box">
-        <input type="text" id="filtroSistemas" placeholder="Filtrar sistema ou módulo..." onkeyup="filtrarCards()" />
-      </div>
+  <header>
+    <div class="container">
+      <h1>Secretaria de Estado de Governo — SEGOV</h1>
+      <p>Núcleo de Tecnologia da Informação — NUTIN</p>
     </div>
   </header>
 
-  <main class="container">
-    <div class="section-header">
-      <h2>Sistemas e Utilitários Disponíveis</h2>
-      <span class="status-pill">Ambiente Institucional Ativo</span>
-    </div>
-
-    <div class="grid" id="listaSistemas">
-
-      <article class="card">
-        <div>
-          <div class="card-tag">Eventos & Capacitação</div>
-          <h3>Gerador de Certificados em Lote</h3>
-          <p>Emissão automatizada de certificados com identidade visual da SEGOV/AC, ajuste de coordenadas e exportação individual ou compactada em PDF/ZIP.</p>
-        </div>
-        <div class="card-actions">
-          <a href="./certificados/" class="btn">Acessar Sistema</a>
-          <span class="version">v1.0 • Web</span>
-        </div>
-      </article>
-
-      <article class="card azul">
-        <div>
-          <div class="card-tag">Patrimônio & Bens Móveis</div>
-          <h3>SisGovPatrimônio</h3>
-          <p>Apoio ao levantamento patrimonial, conferência setorial de bens e emissão de termos de responsabilidade integrados ao fluxo interno NUTIN/DIPAT.</p>
-        </div>
-        <div class="card-actions">
-          <a href="./patrimonio/" class="btn">Acessar Sistema</a>
-          <span class="version">v1.0 • Web</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <div>
-          <div class="card-tag">Licitações & Contratos</div>
-          <h3>SisGovPreços Acre</h3>
-          <p>Ferramenta de apoio à pesquisa de preços, cálculo de médias/medianas e composição de mapas comparativos conforme normativos estaduais.</p>
-        </div>
-        <div class="card-actions">
-          <a href="./sispreco/" class="btn">Acessar Sistema</a>
-          <span class="version">v1.0 • Web</span>
-        </div>
-      </article>
-
-      <article class="card azul">
-        <div>
-          <div class="card-tag">Planejamento de Contratações</div>
-          <h3>SisETP & SisTR Acre</h3>
-          <p>Assistente estruturado para elaboração de Estudos Técnicos Preliminares (ETP) e Termos de Referência (TR) alinhados aos modelos oficiais do Estado.</p>
-        </div>
-        <div class="card-actions">
-          <a href="./planejamento/" class="btn">Acessar Sistema</a>
-          <span class="version">v1.0 • Web</span>
-        </div>
-      </article>
-
-      <article class="card">
-        <div>
-          <div class="card-tag">Padronização Documental</div>
-          <h3>Formatador Institucional</h3>
-          <p>Utilitário rápido para normalização de textos técnicos, tabelas e expedientes administrativos destinados à tramitação no SEI.</p>
-        </div>
-        <div class="card-actions">
-          <a href="./formatador/" class="btn">Acessar Sistema</a>
-          <span class="version">v1.0 • Web</span>
-        </div>
-      </article>
-
+  <main>
+    <div class="container">
+      <div class="box-formulario">
+        <h2>Formulário Institucional</h2>
+        <p>Clique no botão abaixo para abrir o formulário no navegador.</p>
+        <!-- Substitua URL_DO_SEU_FORMULARIO pelo link exato do seu formulário -->
+        <a href="URL_DO_SEU_FORMULARIO" class="btn-acessar" target="_blank" rel="noopener noreferrer">
+          Abrir Formulário
+        </a>
+      </div>
     </div>
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>Secretaria de Estado de Governo — SEGOV</strong><br />
-        Núcleo de Tecnologia da Informação — NUTIN<br />
-        Rua João Donato, nº 1624 — Bairro Ipase, Rio Branco — AC
-      </div>
-      <div class="footer-right">
-        Governo do Estado do Acre<br />
-        Desenvolvimento e Suporte Técnico Interno • 2026
-      </div>
+    <div class="container">
+      <strong>Secretaria de Estado de Governo — SEGOV</strong> • Núcleo de Tecnologia da Informação — NUTIN<br />
+      Rua João Donato, nº 1624 — Bairro Ipase, Rio Branco — AC
     </div>
   </footer>
-
-  <script>
-    function filtrarCards() {
-      const termo = document.getElementById('filtroSistemas').value.toLowerCase();
-      const cards = document.querySelectorAll('#listaSistemas .card');
-      cards.forEach(card => {
-        const texto = card.innerText.toLowerCase();
-        card.style.display = texto.includes(termo) ? 'flex' : 'none';
-      });
-    }
-  </script>
 
 </body>
 </html>
